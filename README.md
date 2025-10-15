@@ -6,7 +6,7 @@ This project captures his **journey**, **legacy**, and **wisdom** through a clea
 ---
 
 ## 🌍 Live Demo
-👉 [View Tribute Page](#) *(Add your GitHub Pages or hosting link here)*
+👉 [https://railaodinga.netlify.app/](#) 
 
 ---
 

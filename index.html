@@ -112,6 +112,42 @@
             50% { transform: scale(1.2); opacity: 0.7; }
             100% { transform: scale(1); opacity: 1; }
         }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .leadership-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0;
+        }
+        .leadership-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -119,21 +155,21 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-               
-            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600">
-                        <img 
-                            src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
-                            alt="Raila Odinga"
-                            class="w-full h-full object-cover"
-                        >
-                    </div>
-
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600">
+                    <img 
+                        src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
+                        alt="Raila Odinga"
+                        class="w-full h-full object-cover"
+                    >
+                </div>
                 <span class="creative-font text-xl font-bold">Raila Odinga</span>
             </div>
             <div class="hidden md:flex space-x-8">
                 <a href="#journey" class="text-gray-600 hover:text-red-600 transition-colors">Journey</a>
-                <a href="#legacy" class="text-gray-600 hover:text-red-600 transition-colors">Legacy</a>
+                <a href="#leadership" class="text-gray-600 hover:text-red-600 transition-colors">Leadership</a>
                 <a href="#timeline" class="text-gray-600 hover:text-red-600 transition-colors">Timeline</a>
+                <a href="#library" class="text-gray-600 hover:text-red-600 transition-colors">Raila Library</a>
+                <a href="#legacy" class="text-gray-600 hover:text-red-600 transition-colors">Legacy</a>
                 <a href="#quotes" class="text-gray-600 hover:text-red-600 transition-colors">Wisdom</a>
             </div>
             <button class="md:hidden text-gray-600">
@@ -146,6 +182,9 @@
     <section class="hero-bg text-white min-h-screen flex items-center pt-16">
         <div class="container mx-auto px-6 py-20">
             <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold">1945 - Present</span>
+                </div>
                 <h1 class="creative-font text-5xl md:text-7xl font-bold mb-6 fade-in">
                     Raila <span class="text-yellow-300">Amolo</span> Odinga
                 </h1>
@@ -154,8 +193,8 @@
                     <a href="#timeline" class="bg-white text-red-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center justify-center gap-2">
                         <i class="fas fa-history"></i> Explore The Journey
                     </a>
-                    <a href="#legacy" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-700 transition duration-300 flex items-center justify-center gap-2">
-                        <i class="fas fa-landmark"></i> Discover Legacy
+                    <a href="#leadership" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-700 transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-user-tie"></i> Leadership Evolution
                     </a>
                 </div>
             </div>
@@ -173,7 +212,7 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="creative-font text-2xl font-bold mb-4">Early Life & Education</h3>
-                    <p class="text-gray-600">Born in Maseno in 1945, Raila Odinga was educated in Kenya and East Germany, earning a Master's in Mechanical Engineering.</p>
+                    <p class="text-gray-600">Born in Maseno in 1945, Raila Odinga was educated in Kenya and East Germany, earning a Master's in Mechanical Engineering. His early exposure to political activism through his father, Jaramogi Oginga Odinga, shaped his future path.</p>
                 </div>
                 
                 <div class="floating-card bg-gradient-to-br from-blue-50 to-yellow-50 p-8 rounded-2xl border border-blue-100">
@@ -181,7 +220,7 @@
                         <i class="fas fa-fist-raised"></i>
                     </div>
                     <h3 class="creative-font text-2xl font-bold mb-4">Political Awakening</h3>
-                    <p class="text-gray-600">Following in his father's footsteps, he became a vocal advocate for multi-party democracy, enduring detention for his beliefs.</p>
+                    <p class="text-gray-600">Following in his father's footsteps, he became a vocal advocate for multi-party democracy, enduring detention for his beliefs. His time in prison solidified his resolve to fight for democratic reforms and social justice in Kenya.</p>
                 </div>
                 
                 <div class="floating-card bg-gradient-to-br from-yellow-50 to-red-50 p-8 rounded-2xl border border-yellow-100">
@@ -189,7 +228,89 @@
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="creative-font text-2xl font-bold mb-4">National Leadership</h3>
-                    <p class="text-gray-600">As Prime Minister, he helped heal a nation divided by election violence and championed constitutional reforms.</p>
+                    <p class="text-gray-600">As Prime Minister, he helped heal a nation divided by election violence and championed constitutional reforms. His leadership style evolved from confrontational activism to consensus-building statesmanship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Evolution Section -->
+    <section id="leadership" class="leadership-section">
+        <div class="container mx-auto px-6">
+            <h2 class="creative-font text-4xl font-bold text-center mb-16">Evolution of a Leader</h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="leadership-card fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-microphone-alt text-red-600 text-2xl"></i>
+                            </div>
+                            <h3 class="creative-font text-2xl font-bold">Voice of Opposition</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">In the 1990s and early 2000s, Raila Odinga established himself as a formidable opposition leader, challenging the status quo and advocating for constitutional reforms. His fiery rhetoric and unwavering stance made him the face of democratic change in Kenya.</p>
+                        <p class="text-gray-600">During this period, he founded the National Development Party (NDP) and later played a pivotal role in the formation of the Liberal Democratic Party (LDP), consolidating his position as a key political figure.</p>
+                    </div>
+                    
+                    <div class="leadership-card fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-balance-scale text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="creative-font text-2xl font-bold">Coalition Builder</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Raila's leadership evolved significantly when he masterminded the Rainbow Coalition in 2002, which brought together diverse political parties to defeat KANU's 24-year rule. This demonstrated his ability to build broad-based political alliances.</p>
+                        <p class="text-gray-600">His tenure as Minister for Energy and later as Prime Minister further showcased his capacity for governance and administration, balancing ideological principles with pragmatic leadership.</p>
+                    </div>
+                    
+                    <div class="leadership-card fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-hands-helping text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="creative-font text-2xl font-bold">National Healer</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Following the 2007-2008 post-election violence, Raila's acceptance of the Prime Minister role in the Grand Coalition Government marked a critical transition in his leadership - from opposition figure to national unifier.</p>
+                        <p class="text-gray-600">The 2018 "Handshake" with President Uhuru Kenyatta represented perhaps his most significant transformation - prioritizing national unity over political rivalry and demonstrating mature statesmanship.</p>
+                    </div>
+                    
+                    <div class="leadership-card fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-globe-africa text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="creative-font text-2xl font-bold">Pan-African Statesman</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">In recent years, Raila Odinga has transcended Kenyan politics to become a respected voice on continental issues. His advocacy for African integration and democratic governance has earned him recognition across Africa.</p>
+                        <p class="text-gray-600">His appointment as African Union High Representative for Infrastructure Development in 2018 cemented his status as a continental statesman focused on Africa's developmental challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <h3 class="creative-font text-3xl font-bold text-center mb-8">Leadership Philosophy</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center p-6">
+                            <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-people-carry text-red-600 text-2xl"></i>
+                            </div>
+                            <h4 class="creative-font text-xl font-bold mb-3">Servant Leadership</h4>
+                            <p class="text-gray-600">Raila's approach emphasizes service to the people above personal interest, a principle he maintained throughout his political career.</p>
+                        </div>
+                        <div class="text-center p-6">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-university text-blue-600 text-2xl"></i>
+                            </div>
+                            <h4 class="creative-font text-xl font-bold mb-3">Institutional Reform</h4>
+                            <p class="text-gray-600">He consistently advocated for strong institutions over strong individuals, believing that proper systems safeguard democracy.</p>
+                        </div>
+                        <div class="text-center p-6">
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-handshake text-green-600 text-2xl"></i>
+                            </div>
+                            <h4 class="creative-font text-xl font-bold mb-3">Consensus Building</h4>
+                            <p class="text-gray-600">His later career demonstrated a shift toward bridge-building and finding common ground for national progress.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,7 +370,7 @@
                         <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-500">
                             <div class="text-red-500 font-bold text-lg mb-2">2002</div>
                             <h3 class="creative-font text-xl font-bold mb-3">Rainbow Coalition Victory</h3>
-                            <p class="text-gray-600">Plays a key role in the National Rainbow Coalition that wins the presidential election.</p>
+                            <p class="text-gray-600">Plays a key role in the National Rainbow Coalition that wins the presidential election, ending KANU's 24-year rule.</p>
                         </div>
                         <div class="timeline-dot pulse-dot"></div>
                     </div>
@@ -279,7 +400,17 @@
                         <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-500">
                             <div class="text-blue-500 font-bold text-lg mb-2">2018</div>
                             <h3 class="creative-font text-xl font-bold mb-3">The Handshake</h3>
-                            <p class="text-gray-600">Makes history with President Uhuru Kenyatta in a symbolic handshake that promotes national unity.</p>
+                            <p class="text-gray-600">Makes history with President Uhuru Kenyatta in a symbolic handshake that promotes national unity and political reconciliation.</p>
+                        </div>
+                        <div class="timeline-dot pulse-dot"></div>
+                    </div>
+                    
+                    <!-- Timeline Item 9 -->
+                    <div class="timeline-item fade-in">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-500">
+                            <div class="text-red-500 font-bold text-lg mb-2">2018</div>
+                            <h3 class="creative-font text-xl font-bold mb-3">AU Infrastructure Envoy</h3>
+                            <p class="text-gray-600">Appointed as the African Union High Representative for Infrastructure Development, expanding his influence to continental affairs.</p>
                         </div>
                         <div class="timeline-dot pulse-dot"></div>
                     </div>
@@ -288,8 +419,41 @@
         </div>
     </section>
 
+    <!-- Raila Library Section -->
+    <section id="library" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="creative-font text-4xl font-bold text-center mb-6">The Raila Odinga Media Gallery</h2>
+
+           
+            <div class="image-gallery">
+                <div class="gallery-item fade-in">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoiLTgh-sZ647mrdGzg3fMbVwSAZ2oMkE5Fw&s" alt="Raila Library exterior">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfFlmi2k8TLjnYCF6XBBLUAGCqXIet8f2Kw&s" alt="Raila Library reading area">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://cdn.britannica.com/98/127198-050-F670E902/Raila-Odinga-Kenyan.jpg" alt="Historical documents at Raila Library">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" alt="Raila Odinga at the library">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://www.mpasho.co.ke/_next/image?url=https%3A%2F%2Fcdn.radioafrica.digital%2Fimage%2F2025%2F10%2Fa74bad97-33c6-4fec-92e4-570770634928.jpg&w=3840&q=100" alt="Raila Odinga at the library">
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 fade-in">
+                    <a href="#" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 inline-flex items-center gap-2">
+                         RIP JAKOM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Legacy Section -->
-    <section id="legacy" class="py-20 bg-white">
+    <section id="legacy" class="py-20 bg-gradient-to-b from-blue-50 to-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="creative-font text-4xl font-bold text-center mb-16">Enduring Legacy</h2>
             
@@ -298,25 +462,39 @@
                     <div class="fade-in">
                         <h3 class="creative-font text-2xl font-bold mb-6 text-red-600">Democratic Reforms</h3>
                         <p class="text-gray-600 mb-4">Raila Odinga's unwavering commitment to multi-party democracy transformed Kenya's political landscape. His advocacy paved the way for competitive elections and greater political freedom.</p>
-                        <p class="text-gray-600">Through years of struggle, including detention and political persecution, he remained a symbol of resistance against authoritarian rule.</p>
+                        <p class="text-gray-600">Through years of struggle, including detention and political persecution, he remained a symbol of resistance against authoritarian rule. His efforts contributed significantly to the repeal of Section 2A of the Constitution, which established Kenya as a multi-party state.</p>
                     </div>
                     
                     <div class="fade-in">
                         <h3 class="creative-font text-2xl font-bold mb-6 text-blue-600">Constitutional Change</h3>
                         <p class="text-gray-600 mb-4">As a principal architect of Kenya's 2010 Constitution, Odinga helped create a more decentralized government with stronger checks and balances.</p>
-                        <p class="text-gray-600">This landmark document established devolved governments, expanded civil liberties, and reformed electoral systems.</p>
+                        <p class="text-gray-600">This landmark document established devolved governments, expanded civil liberties, and reformed electoral systems. His "Katra Katra" philosophy emphasized incremental progress toward democratic ideals.</p>
                     </div>
                     
                     <div class="fade-in">
                         <h3 class="creative-font text-2xl font-bold mb-6 text-yellow-600">National Healing</h3>
                         <p class="text-gray-600 mb-4">Following the 2007-2008 post-election violence, Odinga's willingness to enter a power-sharing agreement demonstrated his commitment to national unity over personal ambition.</p>
-                        <p class="text-gray-600">His historic "handshake" with President Uhuru Kenyatta in 2018 further exemplified his dedication to reconciliation.</p>
+                        <p class="text-gray-600">His historic "handshake" with President Uhuru Kenyatta in 2018 further exemplified his dedication to reconciliation and marked his evolution from opposition leader to statesman focused on national cohesion.</p>
                     </div>
                     
                     <div class="fade-in">
                         <h3 class="creative-font text-2xl font-bold mb-6 text-green-600">Pan-African Influence</h3>
                         <p class="text-gray-600 mb-4">Beyond Kenya's borders, Odinga has been an influential voice in African affairs, advocating for regional integration and democratic governance across the continent.</p>
-                        <p class="text-gray-600">His political journey inspires democratic movements throughout Africa.</p>
+                        <p class="text-gray-600">His political journey inspires democratic movements throughout Africa. As AU Infrastructure Envoy, he has championed continental connectivity projects that promise to transform Africa's economic landscape.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <h3 class="creative-font text-3xl font-bold text-center mb-8">Impact on Kenyan Politics</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="creative-font text-xl font-bold mb-4 text-red-600">Political Realignments</h4>
+                            <p class="text-gray-600">Raila Odinga's career has been marked by significant political realignments that have shaped Kenya's party system. From FORD-Kenya to NDP, LDP, ODM, and NASA, his political movements have consistently challenged existing power structures.</p>
+                        </div>
+                        <div>
+                            <h4 class="creative-font text-xl font-bold mb-4 text-blue-600">Youth Engagement</h4>
+                            <p class="text-gray-600">Throughout his career, Odinga has maintained a strong connection with Kenyan youth, who see him as a symbol of change and hope. His political messaging often resonates with younger generations seeking transformation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -333,13 +511,13 @@
                     <div class="quote-mark">"</div>
                     <p class="creative-font text-2xl md:text-3xl text-gray-800 mb-6">The liberation of the African people is not complete until we have economic independence to match our political independence.</p>
                     <div class="flex items-center">
-                      <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600">
-                        <img 
-                            src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
-                            alt="Raila Odinga"
-                            class="w-full h-full object-cover"
-                        >
-                    </div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600 mx-2">
+                            <img 
+                                src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
+                                alt="Raila Odinga"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
                         <div>
                             <p class="font-bold text-gray-800">Raila Odinga</p>
                             <p class="text-gray-600">Former Prime Minister of Kenya</p>
@@ -355,6 +533,14 @@
                     <div class="bg-white p-6 rounded-2xl shadow-lg fade-in">
                         <p class="creative-font text-xl text-gray-800 mb-4">"Our diversity is our strength. What makes us different makes us powerful."</p>
                     </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg fade-in">
+                        <p class="creative-font text-xl text-gray-800 mb-4">"The price of freedom is eternal vigilance. We must always be ready to defend our democracy."</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg fade-in">
+                        <p class="creative-font text-xl text-gray-800 mb-4">"Leadership is not about position, but about making positive impact on people's lives."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -366,13 +552,13 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0 text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
-                      <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600">
-                        <img 
-                            src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
-                            alt="Raila Odinga"
-                            class="w-full h-full object-cover"
-                        >
-                    </div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-red-600 mx-2">
+                            <img 
+                                src="https://ichef.bbci.co.uk/news/480/cpsprodpb/9d48/live/1ea13160-a99f-11f0-a879-dd59dcaec71c.jpg.webp" 
+                                alt="Raila Odinga"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
                         <span class="creative-font text-xl font-bold">Raila Odinga</span>
                     </div>
                     <p class="text-gray-400 max-w-md">A tribute to the life and legacy of one of Kenya's most influential political figures.</p>
@@ -390,7 +576,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>© 2023 Tribute to Raila Odinga. Created for educational and demonstration purposes.</p>
+                <p>© 2025 Tribute to Raila Odinga. Created for educational and demonstration purposes.</p>
             </div>
         </div>
     </footer>
