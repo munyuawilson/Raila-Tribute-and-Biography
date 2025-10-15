@@ -49,5 +49,5 @@ This project captures his **journey**, **legacy**, and **wisdom** through a clea
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/raila-odinga-tribute.git
+https://github.com/munyuawilson/Raila-Tribute-and-Biography.git
 cd raila-odinga-tribute
